@@ -1,14 +1,6 @@
-#c numbers of simulation 
-#n1 numbers of daily samples
-#n2 numbers of days
-#px probability of x
-#py probability of y
 
-#type in 1,2,3
-#1 Reject H0 or not
-#2 Enough Power or not
-#3 Ternimal Experiment or not 
-
+ChanceOfTerminal<- function(c,n1,n2,px,py,type){  
+  
 
 RejectH0<- function(c,n1,n2,px,py,type){
   
@@ -41,22 +33,21 @@ RejectH0<- function(c,n1,n2,px,py,type){
       r[i,1] <- ifelse(Theta > k, 1, 0) #判断前i天是否检测到效果，可以停止实验
       
     } else (k<- 4)
-   
+    
   }
   if(sum(r[,1])>0&&k<=3) {
     return (1)}  else if(sum(r[,1])<=0&&k<=3) {
       return (0)
     } else {
-      print("False Type Parameter!!!")
+      print("Invalid Type Parameter!!!")
     }
   
   #只要前i天出现了一次拒绝零假设的情况，记为1
   
 }
 
-#Chance of Terminal
-ChanceOfTerminal<- function(N,tn,d,px,py,type){  
-    
-    r<- sapply(1:N, FUN=RejectH0,tn,d,px,py,type)
-    sum(r)/N
+#Chance of reject H0
+  r<- sapply(1:c, FUN=RejectH0,n1,n2,px,py,type)
+  sum(r)/c
 }
+
