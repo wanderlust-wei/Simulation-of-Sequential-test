@@ -4,4 +4,4 @@
 ##### 2 If the difference between these two groups is theta (always a few percents), calculate the probability of enough statistic power with sample size growing up.
 ##### 3 Select the conclusive boundary so that true difference could be sensitively detected but to keep a accuracy avoiding falsely rejecting null hypothesis.
 
-##### Ref:http://pages.optimizely.com/rs/optimizely/images/stats_engine_technical_paper.pdf
+##### Ref: http://pages.optimizely.com/rs/optimizely/images/stats_engine_technical_paper.pdf
