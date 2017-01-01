@@ -35,8 +35,8 @@ RejectH0<- function(c,n1,n2,px,py,type){
     } else (k<- 4)
     
   }
-  if(sum(r[,1])>0&&k<=3) {
-    return (1)}  else if(sum(r[,1])<=0&&k<=3) {
+  if(sum(r[,1])>0&&type<=3) {
+    return (1)}  else if(sum(r[,1])<=0&&type<=3) {
       return (0)
     } else {
       print("Invalid Type Parameter!!!")
